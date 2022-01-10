@@ -17,3 +17,5 @@ use App\Http\Controllers\CarController;
 Route::get('/cars/{car}',[CarController::class,'show'])->name('cars.show');
 
 Route::get('/index', [CarController::class,'index']);
+
+Route::get('/cars/destroy/{car}', [CarController::class,'destroy'])->name('cars.destroy');
