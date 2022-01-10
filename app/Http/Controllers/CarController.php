@@ -13,7 +13,7 @@ class CarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Car $car)
+    public function index()
     {
         //$listaCoches = DB::table('cars')->get();
         //return view('index', compact('listaCoches'));
@@ -91,6 +91,7 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
-        //
+        $car = DB::delete('delete from cars where id = ?', [$car->id]);
+        return redirect('index');
     }
 }
