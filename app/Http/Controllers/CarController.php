@@ -27,9 +27,14 @@ class CarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(){
+        return view('cars.create');
+    }
+
+    public function create_post(Request $request){
+        $datos_frm = $request->except('_token','_method');
+        DB::table("cars")->insertGetId(['make'=>$datos_frm['make'],'model'=>$datos_frm['model'],'produced_on'=>$datos_frm['produced_on']]);
+        return redirect('index');
     }
 
     /**
