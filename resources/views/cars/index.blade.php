@@ -7,6 +7,11 @@
     		<title>Mostrar Coches</title>
 	</head>
 	<body>
+		<div>
+			<form action="{{route('cars.create')}}" method="GET">
+				<input type="submit" name="crear"><br><br>
+			</form>
+		</div>
     		<div>
         		<table>
             		<tr>
