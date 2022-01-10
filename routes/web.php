@@ -17,3 +17,7 @@ use App\Http\Controllers\CarController;
 Route::get('/cars/{car}',[CarController::class,'show'])->name('cars.show');
 
 Route::get('/index', [CarController::class,'index']);
+
+Route::get('cars.create', [CarController::class, 'create'])->name('cars.create');
+
+Route::post('cars.create', [CarController::class, 'create_post']);
